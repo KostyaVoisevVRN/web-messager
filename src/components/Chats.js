@@ -11,9 +11,11 @@ const Chats = () => {
         try {
             const chatCollection = collection(dataBase, "chat");
             const newChat = await addDoc(chatCollection, {
-                chatId: `chat${Math.floor(Math.random() * 1000)}`, // Генерируем уникальный ID
+                //chatId: `chat${Math.floor(Math.random() * 1000)}`, // Генерируем уникальный ID
                 messages: []
             });
+            const chatId = newChat.id;
+            await newChat.ref.update({ chatId });
             console.log("Чат создан:", newChat.id);
         } catch (error) {
             console.error("Ошибка при создании чата:", error);
