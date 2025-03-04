@@ -1,11 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-
-const Navbar = ()=>{
-    return(
-     <div>
-        Navbar
-     </div>
+const Navbar = () => {
+    const navigate = useNavigate()
+    const dialogpage = () => {
+        navigate('/main/dialogs')
+    }
+    return (
+        <div>
+            <button onClick={dialogpage}>Dialogs</button>
+        </div>
     )
 }
 

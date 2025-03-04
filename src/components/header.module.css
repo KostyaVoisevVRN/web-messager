@@ -1,0 +1,10 @@
+.header {
+    background: #00ffa6;
+}
+
+.buttonBack{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 24px;
+}

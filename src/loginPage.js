@@ -5,10 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from './firebase';
 
-
-
-
-
 const ERRORS_CODE_MAP = {
   /** код ошибки сервера, когда отправляем невалидную почту */
   INVALID_EMAIL: "auth/invalid-email",
@@ -23,14 +19,9 @@ const LoginPage = () => {
   const [errorMsg, setErrorMsg] = useState(null);
   const navigate=useNavigate()
 
- 
-      
-
   const goToHomePage=()=>{
     navigate('/main')
   }
-
-
 
   const changeAuthMode = () => {
     setAuthMode(false)
@@ -83,7 +74,6 @@ const LoginPage = () => {
     setPassword(event.target.value);
     setErrorMsg(null)
   }
-
 
   return (
 
